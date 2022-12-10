@@ -1,4 +1,11 @@
+import { useEffect, useState } from "react";
+import useSWR from "swr";
+
 export default function ContentTable() {
+
+    const fetcher = (url: string) => fetch(url).then((r)=>r.json());
+    const { data: content, error } = useSWR('/api/content', fetcher);
+    // console.log("cek swr data", data);
 
     const someIndex = [];
     const date = new Date();
@@ -10,7 +17,7 @@ export default function ContentTable() {
             Description: `Description ${i}`,
         });
     }
-
+    
     return(
     <>
         <div className="contentTable">
@@ -24,12 +31,12 @@ export default function ContentTable() {
                     </tr>
 
                     {
-                        someIndex.map((data)=>{
+                        content?.map((data: any)=>{
                             return(
-                                <tr key={data.key}>
-                                    <td>{data.No}</td>
-                                    <td>{data.Content}</td>
-                                    <td>{data.Description}</td>
+                                <tr key={data.id}>
+                                    <td>{data.id}</td>
+                                    <td>{data.contentName}</td>
+                                    <td>{data.contentDesc}</td>
                                     <td>Edit &nbsp; Delete</td>
                                 </tr>
                             )
