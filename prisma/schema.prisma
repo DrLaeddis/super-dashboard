@@ -35,3 +35,11 @@ model User {
   posts   Post[]
   profile Profile?
 }
+
+model Content {
+  id Int @id @default(autoincrement())
+  contentName String @db.VarChar(255)
+  contentDesc String?
+  createAt DateTime @default(now())
+  updateAte DateTime @updatedAt
+}

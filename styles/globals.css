@@ -184,7 +184,7 @@ a {
 .sidebar-list-item {
   position: relative;
   width: 100%;
-  fill: var(--light-gray);
+  /* fill: var(--light-gray); */
 }
 
 .sidebar-list-item.active {

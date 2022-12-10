@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Logo from '../sidebar/logo.jpg'
 
 export default function SidebarAdmin() {
+    const router = useRouter();
     return(
         <aside className="sideBar open" id='data-sidebar'>
             <div className="top-sidebar">
@@ -14,24 +16,24 @@ export default function SidebarAdmin() {
 
             <div className="middle-sidebar">
                 <ul className='sidebar-list'>
-                    <li className='sidebar-list-item active'>
-                        <Link href="/adminPage/dashboard" className="sidebar-link">
+                    <Link href="/adminPage/dashboard" className={router.pathname == "/adminPage/dashboard" ? "sidebar-list-item active" : "sidebar-list-item" }>
+                        <li className='sidebar-link'>
                             <svg className="sidebar-icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" ><g ><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></g></svg>
                             <div className="hidden-sidebar">Dashboard</div>
-                        </Link>
-                    </li>
-                    <li className='sidebar-list-item '>
-                        <Link href="/adminPage/content" className='sidebar-link'>
+                        </li>
+                    </Link>
+                    <Link href="/adminPage/content" className={router.pathname == "/adminPage/content" ? "sidebar-list-item active" : "sidebar-list-item" }>
+                        <li className='sidebar-link'>
                             <svg viewBox="0 0 24 24" className="sidebar-icon" preserveAspectRatio="xMidYMid meet" focusable="false"><g><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"></path></g></svg>
                             <div className="hidden-sidebar">Conten</div>
-                        </Link>
-                    </li>
-                    <li className='sidebar-list-item '>
-                        <Link href="/adminPage/playlist" className="sidebar-link">
+                        </li>
+                    </Link>
+                    <Link href="/adminPage/playlist" className={router.pathname == "/adminPage/playlist" ? "sidebar-list-item active" : "sidebar-list-item" }>
+                        <li className='sidebar-link'>
                             <svg className="sidebar-icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" ><g><path d="M19 9H2v2h17V9zm0-4H2v2h17V5zM2 15h13v-2H2v2zm15-2v6l5-3-5-3z"></path></g></svg>
                             <div className="hidden-sidebar">PLaylist</div>
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                     {/* <li className='sidebar-list-item '>
                         <a href="#" className='sidebar-link'>
                         <svg className="sidebar-icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" ><g ><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></g></svg>
