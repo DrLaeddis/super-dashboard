@@ -343,6 +343,10 @@ td {
   text-align: left;
   border: 1px solid #ddd;
 }
+
+td {
+  cursor: pointer;
+}
 /* table */
 
 /* content page */

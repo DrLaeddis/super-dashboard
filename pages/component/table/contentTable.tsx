@@ -20,8 +20,8 @@ export default function ContentTable() {
     
     return(
     <>
-        <div className="contentTable">
-            <table>
+        <div className="contentTable tb" style={{ borderRadius: "6px" }}>
+            <table className="tb">
                 <tbody>
                     <tr>
                         <th>No</th>

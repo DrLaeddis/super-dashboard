@@ -9,6 +9,26 @@ export default function AdminPlaylist() {
     const router = useRouter();
     const href = '';
 
+    const row = [];
+    for(var i = 1; i <= 20; i++) {
+        row.push({
+            key: i.toString(),
+            No: i,
+            PostTitle: `Content Name ${i}`,
+            PostContent: `Post Content ${i}`,
+            PostDesc: `Post Description ${i}`,
+            Date: `Date ${i}`,
+        });
+    }
+
+    const column = [
+        { accessor: 'no', label: 'no' },
+        { accessor: 'post title', label: 'post title' },
+        { accessor: 'post content', label: 'post content' },
+        { accessor: 'post description', label: 'post description' },
+        { accessor: 'date', label: 'date' },
+    ];
+
     return(
         <>
             <HeadComponent />
@@ -32,7 +52,7 @@ export default function AdminPlaylist() {
                         This page for add new post
                     </p>
 
-                    <PostTable />
+                    <PostTable column={column} row={row}  />
                 </main>
             </div>
         </>
