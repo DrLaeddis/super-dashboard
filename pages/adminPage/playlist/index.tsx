@@ -7,7 +7,7 @@ import PostTable from "../../component/table/postTable";
 export default function AdminPlaylist() {
 
     const router = useRouter();
-    const href = '';
+    const href = '/adminPage/playlist/addPost';
 
     const row = [];
     for(var i = 1; i <= 20; i++) {
@@ -23,9 +23,9 @@ export default function AdminPlaylist() {
 
     const column = [
         { accessor: 'no', label: 'no' },
-        { accessor: 'post title', label: 'post title' },
-        { accessor: 'post content', label: 'post content' },
-        { accessor: 'post description', label: 'post description' },
+        { accessor: 'title', label: 'title' },
+        { accessor: 'content', label: 'content' },
+        { accessor: 'description', label: 'description' },
         { accessor: 'date', label: 'date' },
     ];
 

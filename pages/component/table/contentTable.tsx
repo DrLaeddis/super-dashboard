@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
@@ -6,6 +7,7 @@ export default function ContentTable() {
     const fetcher = (url: string) => fetch(url).then((r)=>r.json());
     const { data: content, error } = useSWR('/api/content', fetcher);
     // console.log("cek swr data", data);
+    const router = useRouter();
 
     const someIndex = [];
     const date = new Date();
@@ -17,6 +19,11 @@ export default function ContentTable() {
             Description: `Description ${i}`,
         });
     }
+
+    const handleOption = (id: any) => {
+        // alert("Hello"+ id)
+        router.push('/adminPage/content/detailContent/'+id)
+    }
     
     return(
     <>
@@ -25,19 +32,21 @@ export default function ContentTable() {
                 <tbody>
                     <tr>
                         <th>No</th>
+                        <th>ID</th>
                         <th>Content</th>
                         <th>Description</th>
-                        <th colSpan={2}>Options</th>
+                        {/* <th colSpan={2}>Options</th> */}
                     </tr>
 
                     {
                         content?.map((data: any)=>{
                             return(
-                                <tr key={data.id}>
+                                <tr key={data.id} onClick={(e) => handleOption(data.id)}>
+                                    <td>{data.id}</td>
                                     <td>{data.id}</td>
                                     <td>{data.contentName}</td>
                                     <td>{data.contentDesc}</td>
-                                    <td>Edit &nbsp; Delete</td>
+                                    {/* <td>Edit &nbsp; Delete</td> */}
                                 </tr>
                             )
                         })

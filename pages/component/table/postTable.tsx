@@ -13,7 +13,6 @@ export default function PostTable(props: any) {
 
     return(
     <>
-        <p>this is post table</p>
         <div className="contentTable tb" style={{ borderRadius: "6px" }}>
             <table className="tb" >
                 <tbody>
