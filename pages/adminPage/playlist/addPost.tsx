@@ -24,8 +24,12 @@ export default function AddPost() {
                         </div>
 
                         <div className="addContentForm"> 
-                            <label className="addContentLabel" htmlFor="">Post Content</label>
-                            <input type="text" name="" id="" placeholder="Post Content" />
+                            <label className="addContentLabel" htmlFor="content">Post Content</label>
+                            <select className="addContentDb" name="content" id="content">
+                                <option value="Programming">Programming</option>
+                                <option value="Sport">Sport</option>
+                                <option value="E-Sport">E-Sport</option>
+                            </select>
                         </div>
 
                         <div className="addContentForm">

@@ -10,7 +10,7 @@ export default function AdminPlaylist() {
     const href = '/adminPage/playlist/addPost';
 
     const row = [];
-    for(var i = 1; i <= 20; i++) {
+    for(var i = 1; i <= 1000; i++) {
         row.push({
             key: i.toString(),
             No: i,

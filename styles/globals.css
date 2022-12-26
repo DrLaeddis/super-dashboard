@@ -387,7 +387,8 @@ td {
   margin-bottom: 1rem;
 }
 
-.addContentForm input[type=text] {
+.addContentForm input[type=text],
+.addContentForm input[type=email] {
   padding: 10px 5px;
   outline: none;
   border-radius: 6px;
@@ -412,7 +413,93 @@ td {
   justify-content: flex-end;
   gap: 10px;
 }
+
+.addContentDb {
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid black;
+  height: 2rem;
+  width: 25%;
+}
 /* content page */
+
+/* profile page */
+.profileField {
+  background-color: white;
+  box-shadow: 4px 0px 16px #0000000F;
+  border-radius: 6px;
+  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.profileFieldName,
+.profileFieldAddress {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+/* profile page */
+
+/* pagination */
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginationInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.paginationBtn {
+  display: flex;
+  gap: 10px;
+}
+/* pagination */
+
+/* auth page */
+.authPage {
+  background-color: white;
+  box-shadow: 4px 0px 16px #0000001A;
+  width: auto;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.authPage p {
+  text-align: center;
+}
+
+.authInput {
+  width: 400px;
+  outline: none;
+  padding: 8px 5px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #CBCBCB;
+}
+
+.labelAuth {
+  margin-top: 5px;
+}
+
+.btnAuth {
+  background: transparent linear-gradient(271deg, #0FDAFA 0%, #465BF2 100%) 0% 0% no-repeat padding-box;
+  margin-top: 1.2rem;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  color: white;
+}
+/* auth page */
 
 /* extention style */
 .width-100 {
@@ -421,6 +508,10 @@ td {
 
 .width-75 {
   width: 75%;
+}
+
+.width-50 {
+  width: 50%;
 }
 
 .width-25 {
@@ -436,11 +527,21 @@ td {
   width: auto;
 }
 
+.fix-height {
+  height: 100vh;
+}
+
 .customBtn {
   padding: 10px;
   width: auto;
   outline: none;
   border: 1px solid black;
   border-radius: 6px;
+}
+
+.bgBackground-2 {
+  background-color: lightgray;
+  height: 100vh;
+  display: flex;
 }
 /* extention style */

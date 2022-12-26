@@ -1,34 +1,47 @@
-import { useEffect } from "react"
+import { count } from "console";
+import { useEffect, useState } from "react"
 
-export default function Pagination(props: any) {
+export default function Pagination(props: 
+    {   activePage: any,
+        count: any,
+        rowsPerPage: any,
+        setActivePage: any,
+        totalPages: any, }){
 
-    useEffect(()=>{
-        console.log("cek", props);
-    }, [])
+    const beginning = props.activePage === 1 ? 1 : props.rowsPerPage * (props.activePage - 1) + 1;
+    const end = props.activePage === props.totalPages ? props.count : beginning + props.rowsPerPage -1;
 
     return(
         <>
             <div className="pagination">
-                <button>
-                    First
-                </button>
-                <button>
-                    Previous
-                </button>
-                <button>
-                    Next
-                </button>
-                <button>
-                    Last
-                </button>
+                <div className="paginationInfo">
+                    <p>
+                        Page {props.activePage} of {props.totalPages}
+                    </p>
 
-                <p>
-                    Page of
-                </p>
+                    <p>
+                        Rows: {beginning === end ? end : `${beginning} - ${end}`} of {props.count}
+                    </p>
+                </div>
 
-                <p>
-                    Rows: end of
-                </p>
+                <div className="paginationBtn">
+                    <button disabled={props.activePage === 1} onClick={() => props.setActivePage(1)}>
+                        First
+                    </button>
+
+                    <button 
+                    disabled={props.activePage === 1} onClick={() => props.setActivePage(props.activePage - 1)}>
+                        Previous
+                    </button>
+
+                    <button disabled={props.activePage === props.totalPages} onClick={() => props.setActivePage(props.activePage + 1)}>
+                        Next
+                    </button>
+
+                    <button disabled={props.activePage === props.totalPages} onClick={() => props.setActivePage(props.totalPages)}>
+                        Last
+                    </button>
+                </div>
             </div>
         </>
     )
